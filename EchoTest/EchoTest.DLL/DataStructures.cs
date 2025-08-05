@@ -8,7 +8,7 @@ namespace EchoTest.DLL
         public int TargetId;
         public int StateKey;
         public int Operation;
-        public int[] Values;
+        public int Value;
     }
 
     public struct TestEntity
