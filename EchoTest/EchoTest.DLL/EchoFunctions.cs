@@ -1,8 +1,31 @@
 using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace EchoTest.DLL
 {
+    // Add COM wrapper class
+    [ComVisible(true)]
+    [Guid("c3a21856-68d7-4e08-a3f9-28a99bb7fc89")] // Generate a real GUID
+    [ClassInterface(ClassInterfaceType.AutoDual)]
+    public class EchoFunctionsCOM
+    {
+        public int AddIntegers(int a, int b)
+        {
+            return EchoFunctions.AddIntegers(a, b);
+        }
+    
+        public string ModifyString(string input)
+        {
+            return EchoFunctions.ModifyString(input);
+        }
+    
+        public long MeasureBatchProcessingMicroseconds(int characterCount, int operations)
+        {
+            return EchoFunctions.MeasureBatchProcessingMicroseconds(characterCount, operations);
+        }
+    }
+    
     public static class EchoFunctions
     {
         private static Action<string> _registeredCallback;
