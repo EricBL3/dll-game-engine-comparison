@@ -1,0 +1,4 @@
+Debug/
+*.build/
+XCBuildData/
+EagerLinkingTBDs/
